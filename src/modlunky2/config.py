@@ -180,6 +180,13 @@ class PacinoGolfTrackerConfig(CommonTrackerConfig):
 @serialize(rename_all="kebabcase")
 @deserialize(rename_all="kebabcase")
 @dataclass
+class WinTrackerConfig(CommonTrackerConfig):
+    pass
+
+
+@serialize(rename_all="kebabcase")
+@deserialize(rename_all="kebabcase")
+@dataclass
 class TrackersConfig:
     category: CategoryTrackerConfig = field(default_factory=CategoryTrackerConfig)
     pacifist: PacifistTrackerConfig = field(default_factory=PacifistTrackerConfig)
@@ -188,6 +195,7 @@ class TrackersConfig:
     pacino_golf: PacinoGolfTrackerConfig = field(
         default_factory=PacinoGolfTrackerConfig
     )
+    win_tracker: WinTrackerConfig = field(default_factory=WinTrackerConfig)
 
 
 @serialize  # Note: these fields aren't renamed for historical reasons
